@@ -21,6 +21,13 @@
         <button ng-click="sub()">-</button>
         <button ng-click="div()">/</button>
         <button ng-click="mul()">*</button>
+        <div ng-show="showrecent">
+        <hr/>
+            Recent Transactions
+            <p ng-repeat="recent in recenthistory">
+                {{recent.arg1}} {{recent.oper}} {{recent.arg2}} = {{recent.result}}
+            </p>
+        </div>
     </div>
 
 </body>

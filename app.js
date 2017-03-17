@@ -12,6 +12,13 @@ module.controller("calcCtrl", function($scope){
     $scope.add =function(){
         $scope.operator="+";
         result_temp = parseInt($scope.arg1) + parseInt($scope.arg2);
-        console.log(result_temp);
+        //console.log(result_temp);
     }
+
+    $scope.sub =function(){
+        $scope.operator="-";
+        result_temp = parseInt($scope.arg1) - parseInt($scope.arg2);
+        //console.log(result_temp);
+    }
+
 });

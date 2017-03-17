@@ -4,29 +4,23 @@
 
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
+    <title>Calculator</title>
 </head>
 
 <body>
-    <div ng-controller="MainCtrl">
-        <h1>Hello Angular!</h1>
-        <p>Enter you name<input ng-model="userName" ng-change="nameEnter()"type="text"></input></p>
-        <p>Remember me<input ng-model="remember" ng-change="rememberChange()" type="checkbox"></input></p>
-        <p>Today's Date<input ng-model="todayDate" ng-change="datechange()" type="date"></input></p>
-        <p>Gender
-        	<p><input ng-model="gender" type="radio" value="Male">Male</input></p>
-        	<p><input ng-model="gender" type="radio" value="Female">Female</input></p>
-        </p>
-        <p ng-if="hourOfDay < 12">Good morning</p>
-        <p ng-if="hourOfDay > 17">Good evening</p>
-        <p>The hour of the day is: {{hourOfDay}} </p>
-        <p>The current time is {{currentTime}}</p>
-        <button ng-click="updateTime()">Click to refresh time</button>
-        <div>
-        	<p>Name: {{userName}}</p>
-        	<p>Remember: {{rememberValue}}</p>
-        	<p>Date: {{todayDate}}</p>
-        	<p>Gender: {{gender}}</p>
-        </div>
+    <h1>Calculator App</h1>
+    <div ng-controller="calcCtrl">
+        arg1 <input type="number" ng-model = "arg1"></input>
+        {{operator}}
+        arg1 <input type="number" ng-model = "arg2"></input>
+        <button ng-click="calculate()">=</button>
+        {{result}}
+        </br>
+        Choose Option
+        <button ng-click="add()">+</button>
+        <button ng-click="sub()">-</button>
+        <button ng-click="div()">/</button>
+        <button ng-click="mul()">*</button>
     </div>
 
 </body>

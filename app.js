@@ -1,29 +1,17 @@
 
 var module = angular.module("myApp", []);
-module.controller("MainCtrl", Main);
+module.controller("calcCtrl", function($scope){
 
-function Main($scope) {
-            
-    var d = new Date();
-    $scope.hourOfDay = 18;
-    $scope.currentTime = d.toTimeString();
-    //console.log("main called");
-    $scope.updateTime = function(){
-        var d = new Date();
-        $scope.currentTime = d.toTimeString();
-    }
-    $scope.nameEnter = function(){
-        console.log("entering name..");
-    }
-    $scope.rememberChange = function(){
-        if($scope.remember){
-            $scope.rememberValue = "Yes";
-        }else{
-            $scope.rememberValue = "No";
-        }
-    }
-    $scope.datechange = function(){
-        console.log($scope.todayDate);
+    $scope.result=0;
+    var result_temp=0;;
+
+    $scope.calculate =function(){
+        $scope.result = result_temp;
     }
 
-}
+    $scope.add =function(){
+        $scope.operator="+";
+        result_temp = parseInt($scope.arg1) + parseInt($scope.arg2);
+        console.log(result_temp);
+    }
+});

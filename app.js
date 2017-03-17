@@ -21,4 +21,10 @@ module.controller("calcCtrl", function($scope){
         //console.log(result_temp);
     }
 
+    $scope.div =function(){
+        $scope.operator="/";
+        result_temp = parseInt($scope.arg1) / parseInt($scope.arg2);
+        //console.log(result_temp);
+    }
+
 });
